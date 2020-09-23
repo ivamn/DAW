@@ -1,1 +1,0 @@
-nautilus /otp/lampp/htdocs
