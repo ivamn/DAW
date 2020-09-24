@@ -144,6 +144,19 @@ destructure(...numbersDestructuration);
  */
 console.log("EXERCISE 1 - PART 8");
 
+function groupNumbers(...values) {
+    let evenValues = values.filter(n => n % 2 == 0);
+    let oddValues = values.filter(n => n % 2 != 0);
+    console.log("Even numbers: ");
+    console.log(evenValues.join(" - "));
+    console.log("Odd numbers: ");
+    console.log(oddValues.join(" - "));
+}
+
+groupNumbers(1, 9, 8, 7, 15, 32, 48, 16, 15, 39);
+groupNumbers(10, 10, 10, 10, 10, 10, 10);
+groupNumbers(11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
+
 /**
  * Part 9
  * Create a Map object. The key will be a student name, and the value an array with all his/her exam marks.
@@ -152,10 +165,27 @@ console.log("EXERCISE 1 - PART 8");
  */
 console.log("EXERCISE 1 - PART 9");
 
+let students = new Map();
+students.set("Peter", [7.603, 2.50, 6.255, 9.020]);
+students.set("Luis", [4.819, 5.364, 7.48, 8.45]);
+
+students.forEach((marks, student) => {
+    marks = marks.map(m => m.toFixed(2));
+    console.log(`${student} (${marks.join(" - ")})`);
+})
+
 /**
  * Create a function that receives an array, deletes its duplicated values and prints them.
  * Create a Set object to delete the duplicated values.
  */
 console.log("EXERCISE 1 - PART 10");
 
+function deleteDuplicatedItems(values) {
+    let set = new Set(values);
+    return Array.from(set);
+}
 
+let uniqueValues = deleteDuplicatedItems([1, 1, 1, 1, 2, 3, 4, 5, 6]);
+console.log(uniqueValues.join(" - "));
+uniqueValues = deleteDuplicatedItems(["Hello", "Hello", "Cookie", "Cardboard", "Pencil", "Pencil"]);
+console.log(uniqueValues.join(" - "));
