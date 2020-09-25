@@ -122,19 +122,18 @@ console.log(strings.map(w => w.length).reduce((totalLength, length) => totalLeng
  */
 console.log("EXERCISE 1 - PART 7");
 
-function destructure(...numbers) {
-    let [n1 = 1, n2 = 2, n3 = 3] = numbers;
+function destructure([n1 = 1, n2 = 2, n3 = 3]) {
     console.log("Numbers: " + n1 + " " + n2 + " " + n3);
 }
 
 let numbersDestructuration = [4, 9, 7];
-destructure(...numbersDestructuration);
+destructure(numbersDestructuration);
 numbersDestructuration = [4];
-destructure(...numbersDestructuration);
+destructure(numbersDestructuration);
 numbersDestructuration = [4, 9];
-destructure(...numbersDestructuration);
+destructure(numbersDestructuration);
 numbersDestructuration = [];
-destructure(...numbersDestructuration);
+destructure(numbersDestructuration);
 
 /**
  * Part 8
