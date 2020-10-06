@@ -17,6 +17,12 @@ window.addEventListener("DOMContentLoaded", e => {
     newProductForm = document.getElementById("newProduct");
     newProductForm.image.addEventListener("change", loadImage);
 
+    let mainDiv = document.createElement("div");
+    mainDiv.setAttribute("id", "productsContainer");
+    mainDiv.classList.add("card-columns", "mb-4");
+
+    newProductForm.after(mainDiv);
+
     newProductForm.addEventListener("submit", (e) => {
         e.preventDefault();
         if (!newProductForm.title.value || !newProductForm.price.value || !newProductForm.image.value || !newProductForm.description.value) {
@@ -42,7 +48,7 @@ window.addEventListener("DOMContentLoaded", e => {
             cardFooter.classList.add("card-footer", "bh-transparent", "text-muted", "row");
             let col = document.createElement("div");
             col.classList.add("col");
-            col.innerText = categories[newProductForm.select.value];
+            col.innerText = categories[newProductForm.category.value];
             let colRight = document.createElement("div");
             colRight.classList.add("col", "text-right");
             colRight.innerText = newProductForm.price.value + " €";
@@ -51,7 +57,7 @@ window.addEventListener("DOMContentLoaded", e => {
             cardBody.append(cardTitle, cardText);
             cardFooter.append(col, colRight);
 
-            document.getElementById("productsContainer").appendChild(card);
+            mainDiv.append(card);
 
             newProductForm.reset();
             document.getElementById("imgPreview").src = "";
