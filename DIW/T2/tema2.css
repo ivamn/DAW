@@ -1,0 +1,98 @@
+#lista {
+    list-style-position: outside;
+    list-style-type: lower-greek;
+}
+
+#enlace {
+    text-decoration: none;
+}
+
+#enlace:hover {
+    color: cadetblue;
+}
+
+#tabla {
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+#tabla, #tabla td {
+    border: 1px solid black;
+}
+
+.yellow {
+    background-color: yellow;
+    width: 100px;
+    height: 75px;
+    border: 1px solid black;
+}
+
+.red {
+    background-color: red;
+    width: 100px;
+    height: 75px;
+    border: 1px solid black;
+}
+
+.blue {
+    background-color: blue;
+    width: 100px;
+    height: 75px;
+    border: 1px solid black;
+}
+
+.display-table {
+    display: table;
+}
+
+.display-row {
+    display: table-row;
+}
+
+.display-cell {
+    display: table-cell;
+}
+
+.position-relative:hover {
+    position: relative;
+    right: 50px;
+    top: 50px;
+}
+
+.position-absolute:hover {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+.position-fixed {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+.float {
+    float: right;
+}
+
+div.red p {
+    color: white;
+}
+
+.float-izquierda {
+    float: left;
+    width: 200px;
+}
+
+.float-derecha {
+    float: right;
+    width: 200px;
+}
+
+hr.float-clear {
+    clear: both;
+}
+
+p.clear {
+    clear: both;
+}

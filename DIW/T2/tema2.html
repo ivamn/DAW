@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tema2.css">
+</head>
+
+<body>
+    <!-- Listas -->
+    <ol id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+
+    <hr>
+
+    <!-- Enlaces -->
+    <a id="enlace" href="www.google.es">Enlace a google sin subrayado</a>
+
+    <hr>
+
+    <!-- Tablas -->
+    <table id="tabla">
+        <caption>Título de la tabla</caption>
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+        </tr>
+        <tr>
+            <td>Elemento 3</td>
+            <td>Elemento 4</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- Display -->
+    <div class="display-table">
+        <div class="display-row">
+            <div class="yellow display-cell"></div>
+            <div class="red display-cell"></div>
+            <div class="blue display-cell"></div>
+            <div class="red display-cell"></div>
+        </div>
+        <div class="display-row">
+            <div class="yellow display-cell"></div>
+            <div class="blue display-cell"></div>
+            <div class="red display-cell"></div>
+            <div class="yellow display-cell"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Posicionamiento -->
+    <div class="display-table">
+        <div class="display-row">
+            <div class="yellow display-cell"></div>
+            <div class="red display-cell"></div>
+            <div class="blue display-cell"></div>
+            <div class="red display-cell position-relative">
+                <p>Hover - Relative position</p>
+            </div>
+        </div>
+        <div class="display-row">
+            <div class="yellow display-cell position-fixed">
+                <p>Fixed</p>
+            </div>
+            <div class="blue display-cell"></div>
+            <div class="red display-cell"></div>
+            <div class="yellow display-cell position-absolute">
+                <p>Hover - Absolute position</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Float -->
+    <div>
+        <div class="red float">
+            <p>Primero - float right</p>
+        </div>
+        <div class="red">
+            <p>Segundo - no float</p>
+        </div>
+        <div class="red">
+            <p>Tercero - no float</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Float imagenes -->
+    <div>
+        <img class="float-izquierda" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/1200px-Heckert_GNU_white.svg.png" />
+        <img class="float-derecha" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/1200px-Heckert_GNU_white.svg.png" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu tellus, pellentesque vel porta at, gravida ac enim. Ut a efficitur ex. Etiam cursus, sem id dignissim malesuada, metus turpis condimentum ante, commodo dignissim sapien justo ut magna. Donec id faucibus enim, ut iaculis lorem. Proin ullamcorper metus id massa suscipit, in rutrum libero malesuada. Nam scelerisque semper maximus. Praesent leo ex, luctus eget orci fermentum, semper cursus velit. Aenean tempor consequat eros. Duis nec tellus at massa convallis volutpat at eget nunc. Nulla sed blandit lacus. Pellentesque a efficitur nisi. Fusce a ex mi. Praesent tristique eros lacus, ut suscipit purus eleifend sit amet.</p>
+        <hr class="float-clear"/>
+        <img class="float-izquierda" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/1200px-Heckert_GNU_white.svg.png" />
+        <img class="float-derecha" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/1200px-Heckert_GNU_white.svg.png" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu tellus, pellentesque vel porta at, gravida ac enim. Ut a efficitur ex. Etiam cursus, sem id dignissim malesuada, metus turpis condimentum ante, commodo dignissim sapien justo ut magna. Donec id faucibus enim, ut iaculis lorem. Proin ullamcorper metus id massa suscipit, in rutrum libero malesuada. Nam scelerisque semper maximus. Praesent leo ex, luctus eget orci fermentum, semper cursus velit. Aenean tempor consequat eros. Duis nec tellus at massa convallis volutpat at eget nunc. Nulla sed blandit lacus. Pellentesque a efficitur nisi. Fusce a ex mi. Praesent tristique eros lacus, ut suscipit purus eleifend sit amet.</p>
+    </div>
+
+    <hr class="float-clear"/>
+
+    <!-- Float bordes-->
+
+    <div style="border: 1px solid black;">
+        <img class="float-derecha" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/1200px-Heckert_GNU_white.svg.png" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu tellus, pellentesque vel porta at, gravida ac enim. Ut a efficitur ex. Etiam cursus, sem id dignissim malesuada, metus turpis condimentum ante, commodo dignissim sapien justo ut magna. Donec id faucibus enim, ut iaculis lorem. Proin ullamcorper metus id massa suscipit, in rutrum libero malesuada. Nam scelerisque semper maximus. Praesent leo ex, luctus eget orci fermentum, semper cursus velit. Aenean tempor consequat eros. Duis nec tellus at massa convallis volutpat at eget nunc. Nulla sed blandit lacus. Pellentesque a efficitur nisi. Fusce a ex mi. Praesent tristique eros lacus, ut suscipit purus eleifend sit amet.</p>
+        <p class="clear"></p>
+    </div>
+
+</body>
+
+</html>
