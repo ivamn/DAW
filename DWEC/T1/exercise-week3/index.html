@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>Exercise 3</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">AssBook</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="add-product.html">Add product</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+    <nav class="navbar navbar-light bg-light justify-content-between mb-4">
+      <form class="form mb-0 w-100">
+        <input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search" />
+      </form>
+    </nav>
+    <div id="productsContainer" class="card-columns mb-4">
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/http.js"></script>
+    <script src="js/product.class.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
