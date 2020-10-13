@@ -112,7 +112,7 @@ class Contacto
 
     public function __clone()
     {
-
+        $this->fecha_alta = clone $this->fecha_alta;
     }
 
 

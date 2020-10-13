@@ -16,7 +16,8 @@
     caption-side: bottom;
 }
 
-#tabla, #tabla td {
+#tabla,
+#tabla td {
     border: 1px solid black;
 }
 
@@ -95,4 +96,40 @@ hr.float-clear {
 
 p.clear {
     clear: both;
+}
+
+#contenedor {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#principal {
+    width: 740px;
+    padding: 10px;
+    float: left;
+    background-color: #ededed;
+}
+
+#aside {
+    width: 180px;
+    padding: 10px;
+    float: left;
+    background-color: #a4a4a4;
+}
+
+#pie {
+    clear: both;
+}
+
+#cabecera,
+#pie {
+    background-color: #ccc;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#pie p {
+    margin: 0;
 }
