@@ -46,12 +46,13 @@ class Product {
         let deleteDiv = document.createElement("div");
         deleteDiv.classList.add("text-right");
         let deleteButton = document.createElement("button");
-        deleteButton.addEventListener("click", e => {
-            this.delete().then(data => {
-                if (!data)
-                    card.remove();
-
-            });
+        deleteButton.addEventListener("click", async e => {
+            try {
+                await this.delete();
+                card.remove();
+            } catch (error) {
+                alert("Error: " + error);
+            }
         });
         deleteButton.classList.add("btn", "btn-danger");
         deleteButton.innerText = "Delete";
