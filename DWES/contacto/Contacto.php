@@ -107,7 +107,8 @@ class Contacto
 
     public function __toString()
     {
-        return "{$this->id}: {$this->nombre} - Tel: {$this->telefono} - Fecha de alta: {$this->fecha_alta->format("d/m/Y")} - Foto: {$this->foto}";
+        return "{$this->id}: {$this->nombre} - Tel: {$this->telefono} - Fecha de alta: {$this->fecha_alta->format("d/m/Y")} - Foto: {$this->foto}"
+         . "   <a href='vercontacto.php?id={$this->id}'>Ver contacto</a>" . "<br/>";
     }
 
     public function __clone()

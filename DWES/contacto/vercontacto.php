@@ -11,10 +11,17 @@
     <?php
 
     require "Agenda.inc.php";
+    require_once __DIR__ . "/" . "Contacto.php";
 
-    $id = $_GET["id"];
+    $id = $_GET["id"] ?? "";
 
-    $contacto = Agenda::getContacto($id);
+    if ($id === "") {
+        die("No se ha recibido el contacto");
+    }
+
+    $agenda = Agenda::getInstance();
+
+    $contacto = $agenda->getContacto($id);
 
     echo $contacto;
 

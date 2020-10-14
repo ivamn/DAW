@@ -3,35 +3,72 @@
 
 class Agenda
 {
-    private static array $contactos = [];
+    private static ?Agenda $instance = null;
+    private array $contactos;
 
-    public static function addContacto($contacto){
-        self::$contactos[] = $contacto;
+    /**
+     * Agenda constructor.
+     * @param array $contactos
+     */
+    private function __construct()
+    {
+        $this->contactos = [];
     }
 
-    public static function deleteContacto(Contacto $contacto){
+    public function addContacto($contacto)
+    {
+        $this->contactos[] = $contacto;
+    }
+
+    public function deleteContacto(Contacto $contacto)
+    {
         $index = null;
-        foreach (self::$contactos as $k => $v) {
+        foreach ($this->contactos as $k => $v) {
             if ($v->getId() === $contacto->getId()) {
                 $index = $k;
+                break;
             }
         }
         if ($index !== null) {
-            unset(self::$contactos[$index]);
+            unset($this->contactos[$index]);
         }
     }
 
-    public static function getContacto($id) {
-        return self::$contactos[intval($id)];
+    public function getContacto($id)
+    {
+        foreach ($this->contactos as $k => $v) {
+            if ($v->getId() === $id) {
+                return $v;
+            }
+        }
+        return null;
     }
 
     public function __toString()
     {
         $cadena = "";
-        foreach (self::$contactos as $contacto):
-            $cadena = $cadena . $contacto->__toString() . " <a href='vercontacto.php?id={$contacto}'>Ver contacto</a>" . "<br/>";
+        foreach ($this->contactos as $contacto):
+            $cadena = $cadena . $contacto->__toString();
         endforeach;
         return $cadena;
+    }
+
+    public function __clone()
+    {
+        foreach ($this->contactos as $c) {
+            $c = clone $c;
+        }
+    }
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            $instance = new Agenda();
+            $instance->addContacto(new Contacto(1, "Iván", "123456789", new DateTime(), "1.jpg"));
+            $instance->addContacto(new Contacto(2, "Daniel", "123456789", new DateTime(), "1.jpg"));
+            $instance->addContacto(new Contacto(3, "Gallego", "123456789", new DateTime(), "1.jpg"));
+        }
+        return $instance;
     }
 
 

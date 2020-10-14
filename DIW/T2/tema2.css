@@ -133,3 +133,21 @@ header h1 {
 #pie p {
     margin: 0;
 }
+
+.table {
+    margin: 20px auto;
+    display: table;
+    border-collapse: collapse;
+    width: 900px;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    height: 100px;
+    background-color: blue;
+    border: 1px solid black;
+}
