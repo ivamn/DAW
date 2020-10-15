@@ -6,4 +6,17 @@ function canciones () :array {
         "Night Visions" => [["Radioactive", "Pop"], ["Tiptoe", "Rock"], ["It's Time", "Pop"], ["Demons", "Jazz"], ["Every Night", "Blues"]]
     ];
 }
+
+function displaySongs(array $canciones)
+{
+    $canciones = array_filter($canciones, function ($album) {
+        return sizeof($album) !== 0;
+    });
+    array_map(function ($k, $v) {
+        $nombresCanciones = array_map(function ($n) {
+            return "{$n[0]} ($n[1])";
+        }, $v);
+        echo nl2br($k . " => " . implode(" - ", $nombresCanciones) . "\n");
+    }, array_keys($canciones), $canciones);
+}
 ?>
