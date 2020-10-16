@@ -9,8 +9,8 @@ class SIRadioOpcion extends SelectorIndividual
         $res = "";
 
         foreach ($this->getTextos() as $value => $texto):
-            $selected = $value === $this->getSeleccionado() ? "checked" : "";
-            $res = $res . "<input type=\"radio\" id=\"male\" name=\"{$this->getNombre()}\" value=\"{$value}\" {$selected}>
+            $selected = $this->getSeleccionado() >= 0 && $value === $this->getSeleccionado() ? "checked" : "";
+            $res = $res . "<input type=\"radio\" id=\"{$value}\" name=\"{$this->getNombre()}\" value=\"{$value}\" {$selected}>
             <label for=\"{$value}\">{$texto}</label><br>";
         endforeach;
 

@@ -8,7 +8,7 @@ class SISelect extends SelectorIndividual
     {
 
         $res = "<label for=\"{$this->getNombre()}\">{$this->getTitulo()}</label><br>
-                <select name=\"cars\" id=\"cars\" form=\"carform\">";
+                <select name=\"{$this->getNombre()}\" id=\"{$this->getNombre()}\" >";
 
         foreach ($this->getTextos() as $value => $texto):
             $selected = $value === $this->getSeleccionado() ? "selected" : "";
