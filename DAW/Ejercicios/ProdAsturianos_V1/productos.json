@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "nombre": "Queso Afuega'l Pitu (Rojo)",
+        "precio": "3.99€",
+        "descripcion": "Queso sencillo de sabor suave perfecto para tomar como entrante o aperitivo acompañado de una mermelada de Higo o de arándanos. Elaborado artesanalmente con leche pasteurizada de vaca"
+    },
+    {
+        "id": 1,
+        "nombre": "Queso Afuega'l Pitu (Rojo)",
+        "precio": "3.99€",
+        "descripcion": "Queso sencillo de sabor suave perfecto para tomar como entrante o aperitivo acompañado de una mermelada de Higo o de arándanos. Elaborado artesanalmente con leche pasteurizada de vaca"
+    },
+    {
+        "id": 2,
+        "nombre": "Queso Afuega'l Pitu (Rojo)",
+        "precio": "3.99€",
+        "descripcion": "Queso sencillo de sabor suave perfecto para tomar como entrante o aperitivo acompañado de una mermelada de Higo o de arándanos. Elaborado artesanalmente con leche pasteurizada de vaca"
+    }
+]
