@@ -32,5 +32,46 @@ app.get("/productos/:id", (req, res) => {
     }
 });
 
+app.post("/productos", (req, res) => {
+    let result = productos.filter(p => p.id == req.body.id);
+    if (result.length > 0) {
+        res.status(400).send({ ok: false, error: "Código repetido" });
+    } else {
+        let newProduct = {
+            id: req.body.id,
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+        };
+        productos.push(newProduct);
+        console.log(productos)
+        res.status(200).send({ ok: true, resultado: newProduct });
+        fichero_utils.guardarProductos(FILE_NAME, productos);
+    }
+});
+
+app.put("/productos/:id", (req, res) => {
+    let result = productos.filter(p => p.id == req.params["id"]);
+    if (result.length > 0) {
+        let p = result[0];
+        p.nombre = req.body.nombre;
+        p.precio = req.body.precio;
+        p.descripcion = req.body.descripcion;
+        res.status(200).send({ ok: true, resultado: p });
+        fichero_utils.guardarProductos(FILE_NAME, productos);
+    } else {
+        res.status(400).send({ ok: false, error: "Producto no encontado" });
+    }
+});
+
+app.delete("/productos(:id", (req, res) => {
+    let result = productos.filter(p => p.id == req.params["id"]);
+    if (result.length > 0) {
+        
+        //fichero_utils.guardarProductos(FILE_NAME, productos);
+    } else {
+        res.status(400).send({ ok: false, error: "Producto no encontrado" })
+    }
+});
 
 app.listen(8080);
