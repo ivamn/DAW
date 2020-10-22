@@ -1,0 +1,27 @@
+header,
+nav,
+main,
+article,
+aside,
+footer {
+    border: 1px solid black;
+    margin: 10px;
+    min-height: 100px;
+}
+
+article,
+section,
+aside,
+nav,
+header,
+footer,
+figure,
+figcaption,
+main {
+    display: block;
+}
+
+body {
+    width: 75%;
+    margin: 0 auto;
+}

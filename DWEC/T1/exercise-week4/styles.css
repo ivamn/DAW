@@ -1,0 +1,28 @@
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+#errorMsg.hidden {
+    opacity: 0;
+}
+
+#errorMSg {
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+.card>.card-footer {
+    font-size: smaller;
+}
+
+.card-body .card-text {
+    white-space: pre-wrap;
+}
