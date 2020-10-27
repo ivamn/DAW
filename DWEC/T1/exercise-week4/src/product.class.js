@@ -1,15 +1,17 @@
 import productsTemplate from '../templates/product.handlebars';
 import {Http} from './http.js';
 import {SERVER} from './constants.js';
+import * as moment from 'moment';
 
 export class Product {
-    constructor({ id, title, description, category, price, mainPhoto }) {
+    constructor({ id, title, description, category, price, mainPhoto, datePublished }) {
         this.id = id ? id : null;
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
         this.mainPhoto = mainPhoto;
+        this.datePublished = datePublished;
     }
 
     static getAll() {
@@ -30,6 +32,7 @@ export class Product {
         
         let p = new Product({...this});
         p.category = p.category.name;
+        p.datePublished = moment(p.datePublished).fromNow();
 
         let productsHtml = productsTemplate(p);
         card.innerHTML = productsHtml;

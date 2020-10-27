@@ -1,3 +1,8 @@
+/*
+    fichero_utils.js: Fichero que contiene funciones de utilidad que se
+    utilizarán en el fichero principal index.js.
+*/
+
 "use strict";
 
 module.exports = {
@@ -19,7 +24,7 @@ function cargarProductos(fileName) {
 }
 
 function guardarProductos(fileName, products) {
-    if (products && products.lenth > 0) {
+    if (products && products.length > 0) {
         try {
             fs.writeFileSync(fileName, JSON.stringify(products));
         } catch (error) {

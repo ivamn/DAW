@@ -1,3 +1,8 @@
+/*
+    index.js: Entrada principal de la aplicación, se definen como se responde
+    a las peticiones del servidor express y se pone el servidor a la escucha.
+*/
+
 "use strict";
 
 const express = require("express");
@@ -34,8 +39,8 @@ app.get("/productos/:id", (req, res) => {
 
 app.post("/productos", (req, res) => {
     let result = productos.filter(p => p.id == req.body.id);
-    if (result.length > 0) {
-        res.status(400).send({ ok: false, error: "Código repetido" });
+    if (result.length > 0 || !req.body.id) {
+        res.status(400).send({ ok: false, error: "Código repetido o no está presente" });
     } else {
         let newProduct = {
             id: req.body.id,
@@ -44,7 +49,6 @@ app.post("/productos", (req, res) => {
             descripcion: req.body.descripcion,
         };
         productos.push(newProduct);
-        console.log(productos)
         res.status(200).send({ ok: true, resultado: newProduct });
         fichero_utils.guardarProductos(FILE_NAME, productos);
     }
@@ -64,11 +68,14 @@ app.put("/productos/:id", (req, res) => {
     }
 });
 
-app.delete("/productos(:id", (req, res) => {
+app.delete("/productos/:id", (req, res) => {
     let result = productos.filter(p => p.id == req.params["id"]);
     if (result.length > 0) {
-        
-        //fichero_utils.guardarProductos(FILE_NAME, productos);
+        let product = result[0];
+        let index = productos.indexOf(product);
+        productos.splice(index, 1);
+        res.status(200).send({ ok: true, resultado: product })
+        fichero_utils.guardarProductos(FILE_NAME, productos);
     } else {
         res.status(400).send({ ok: false, error: "Producto no encontrado" })
     }
