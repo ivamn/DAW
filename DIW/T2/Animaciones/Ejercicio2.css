@@ -1,0 +1,60 @@
+@keyframes linkhover-green {
+    0% {
+        border-left: 0px solid green;
+    }
+
+    100% {
+        border-left: 5px solid green;
+    }
+}
+
+@keyframes linkhover-yellow {
+    0% {
+        border-left: 0px solid yellow;
+    }
+
+    100% {
+        border-left: 5px solid yellow;
+    }
+}
+
+@keyframes linkhover-blue {
+    0% {
+        border-left: 0px solid blue;
+    }
+
+    100% {
+        border-left: 5px solid blue;
+    }
+}
+
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+li {
+    text-align: center;
+    width: 100px;
+    padding: 8px;
+}
+
+a {
+    color: initial;
+    text-decoration: initial;
+}
+
+#first:hover {
+    animation: linkhover-green 2s linear 0s forwards;
+}
+
+#second:hover {
+    animation: linkhover-yellow 2s linear 0s forwards;
+}
+
+#third:hover {
+    animation: linkhover-blue 2s linear 0s forwards;
+}
