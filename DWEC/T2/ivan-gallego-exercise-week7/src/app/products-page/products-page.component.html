@@ -1,20 +1,20 @@
-<form action="#" class="mt-4" id="newProduct" novalidate>
+<form action="#" class="mt-4" id="newProduct" novalidate (ngSubmit)="submitForm()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" name="title" id="title" placeholder="Product you are selling">
+      <input type="text" class="form-control" name="title" id="title" placeholder="Product you are selling" [(ngModel)]="newProduct.title">
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" id="description" name="description" rows="3"
+      <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="newProduct.description"
         placeholder="Write something..."></textarea>
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="number" step="0.01" class="form-control" name="price" id="price" placeholder="Price">
+      <input type="number" step="0.01" class="form-control" name="price" id="price" placeholder="Price" [(ngModel)]="newProduct.price">
     </div>
     <div class="form-group">
       <label for="category">Category</label>
-      <select id="category" class="form-control">
+      <select id="category" class="form-control" [(ngModel)]="newProduct.category" name="category">
         <option value="0" selected>Choose a category...</option>
         <option value="1">Electronics</option>
         <option value="2">Motor and vehicles</option>
@@ -24,16 +24,26 @@
     </div>
     <div class="form-group">
       <label for="image">Main photo</label>
-      <input type="file" class="form-control" id="image" name="image">
+      <input type="file" class="form-control" id="image" name="image" #fileImage (change)="changeImage(fileImage)" [(ngModel)]="imageFile">
     </div>
-    <img src="" alt="" id="imgPreview" class="img-thumbnail">
+    <img [src]="newProduct.mainPhoto" alt="" id="imgPreview" class="img-thumbnail">
 
     <div class="row">
       <div class="col-auto">
         <button type="submit" class="btn btn-primary btn-lg">Create</button>
       </div>
-      <div class="alert alert-danger col hidden" id="errorMsg">
-        All fields are mandatory!
+    </div>
+    <div id="productsContainer" class="card-columns mb-4">
+      <div class="card shadow" *ngFor="let product of products">
+        <img class="card-img-top" [src]="product.mainPhoto">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text" [innerText]="product.description"></p>
+        </div>
+        <div class="card-footer bg-transparent text-muted row">
+          <div class="col">{{categories[product.category]}}</div>
+          <div class="col text-right">{{product.price | currency : 'EUR'}}</div>
+        </div>
       </div>
     </div>
 
