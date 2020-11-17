@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../interfaces/product';
+
 
 @Component({
   selector: 'sp-products-page',
