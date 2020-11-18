@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { ProductsService } from '../services/products.service';
+
 
 @Component({
   selector: 'sp-products-page',
@@ -8,22 +8,41 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./products-page.component.css']
 })
 export class ProductsPageComponent implements OnInit {
-  products: Product[] = [];
-  search = '';
 
-  constructor(private productsService: ProductsService) { }
+  products: Product[] = [];
+  newProduct!: Product;
+  imageFile = "";
+  categories = ["None", "Electronics", "Motor and vehicles", "Sports and hobbies", "Other"];
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
+    this.resetProduct();
   }
 
-  addProduct(product: Product): void {
-    // Creating a new array instead of using .push, re-executes the filter pipe
-    this.products = [...this.products, product];
+  submitForm(): void {
+    this.products.push(this.newProduct);
+    this.resetProduct();
   }
 
-  deleteProduct(product: Product): void {
-    // Creating a new array with filter instead of using .splice, re-executes the filter pipe
-    this.products = this.products.filter(p => p !== product);
+  changeImage(fileInput: HTMLInputElement): void {
+    if (!fileInput.files || fileInput.files.length === 0) { return; }
+    const reader: FileReader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+    reader.addEventListener('loadend', e => {
+      this.newProduct.mainPhoto = reader.result as string;
+    });
   }
+
+  resetProduct(): void {
+    this.newProduct = {
+      category: 0,
+      description: "",
+      mainPhoto: "",
+      price: 0,
+      title: ""
+    }
+    this.imageFile = "";
+  }
+
 }

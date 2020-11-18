@@ -1,0 +1,38 @@
+$text: #eee;
+$textHover: #fff;
+$backgrounColor: #666;
+$backgrounColorHover: #888;
+
+@mixin colors {
+    color: $text;
+    background-color: $backgrounColor;
+}
+
+@mixin colorsHover {
+    color: $textHover;
+    background-color: $backgrounColorHover;
+}
+
+@mixin boxSizing($valor) {
+    -moz-box-sizing: $valor;
+    -webkit-box-sizing: $valor;
+    box-sizing: $valor;
+}
+
+@mixin transitions($property, $duration, $timing: linear) {
+    transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+}
+
+@mixin animations($name, $duration, $timing: linear) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+    -moz-animation-name: $name;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $timing;
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $timing;
+}
