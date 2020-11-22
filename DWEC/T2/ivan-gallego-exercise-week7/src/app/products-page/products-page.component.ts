@@ -11,8 +11,8 @@ export class ProductsPageComponent implements OnInit {
 
   products: Product[] = [];
   newProduct!: Product;
-  imageFile = "";
-  categories = ["None", "Electronics", "Motor and vehicles", "Sports and hobbies", "Other"];
+  imageFile = '';
+  categories = ['None', 'Electronics', 'Motor and vehicles', 'Sports and hobbies', 'Other'];
 
   constructor() { }
 
@@ -37,12 +37,12 @@ export class ProductsPageComponent implements OnInit {
   resetProduct(): void {
     this.newProduct = {
       category: 0,
-      description: "",
-      mainPhoto: "",
+      description: '',
+      mainPhoto: '',
       price: 0,
-      title: ""
+      title: ''
     }
-    this.imageFile = "";
+    this.imageFile = '';
   }
 
 }

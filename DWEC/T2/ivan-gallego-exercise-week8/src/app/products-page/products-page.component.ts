@@ -10,7 +10,7 @@ import { ProductsService } from '../services/products.service';
 export class ProductsPageComponent implements OnInit {
 
   products: Product[] = [];
-  search: string = "";
+  search = '';
 
   constructor(private productsService: ProductsService) { }
 
@@ -18,11 +18,11 @@ export class ProductsPageComponent implements OnInit {
     this.products = this.productsService.getProducts();
   }
 
-  addProduct(product: Product) {
+  addProduct(product: Product): void {
     this.products.push(product);
   }
 
-  deleteProduct(product: Product) {
+  deleteProduct(product: Product): void {
     const index = this.products.indexOf(product);
     if (index > -1) {
       this.products.splice(index, 1);

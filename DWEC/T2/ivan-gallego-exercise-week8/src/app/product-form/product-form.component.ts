@@ -10,7 +10,7 @@ export class ProductFormComponent implements OnInit {
   @Output() add = new EventEmitter<Product>();
 
   newProduct!: Product;
-  imageFile = "";
+  imageFile = '';
 
   constructor() { }
 
@@ -35,12 +35,12 @@ export class ProductFormComponent implements OnInit {
   resetProduct(): void {
     this.newProduct = {
       category: 0,
-      description: "",
-      mainPhoto: "",
+      description: '',
+      mainPhoto: '',
       price: 0,
-      title: ""
+      title: ''
     }
-    this.imageFile = "";
+    this.imageFile = '';
   }
 
 }
