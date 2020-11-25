@@ -1,1 +1,4 @@
-<p>product-details works!</p>
+<sp-product-card [product]="product" (deleted)="productDeleted()"></sp-product-card>
+<div class="mt-4 mb-4">
+    <button class="btn btn-success" (click)="goBack()">Go back</button>
+</div>

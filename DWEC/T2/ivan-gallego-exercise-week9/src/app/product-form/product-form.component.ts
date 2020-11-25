@@ -1,26 +1,48 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Product } from '../interfaces/product';
+import { Component, OnInit } from '@angular/core';
+import { Router, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+import { CanComponentDeactivate } from '../guards/page-leave-guard.guard';
+import { ProductAdd } from '../interfaces/product-add';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'sp-product-form',
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit {
-  @Output() add = new EventEmitter<Product>();
-
-  newProduct!: Product;
+export class ProductFormComponent implements OnInit, CanComponentDeactivate {
+  newProduct!: ProductAdd;
   imageFile = '';
+  productAdded = false;
 
-  constructor() { }
+  constructor(
+    private productsService: ProductsService,
+    private router: Router) { }
+
+  canDeactivate(): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    return this.productAdded || confirm('Are you sure you want to leave the page? Changes will not be saved!');
+  }
 
   ngOnInit(): void {
-    this.resetProduct();
+    this.newProduct = {
+      category: 0,
+      description: '',
+      mainPhoto: '',
+      price: 0,
+      title: ''
+    };
   }
 
   submitForm(): void {
-    this.add.emit(this.newProduct);
-    this.resetProduct();
+    this.productsService.addProduct({ ...this.newProduct, category: +this.newProduct.category }).subscribe(
+      product => {
+        this.productAdded = true;
+        this.router.navigate(['/products']);
+      },
+      err => {
+        alert(err);
+      }
+    );
   }
 
   changeImage(fileInput: HTMLInputElement): void {
@@ -30,17 +52,6 @@ export class ProductFormComponent implements OnInit {
     reader.addEventListener('loadend', e => {
       this.newProduct.mainPhoto = reader.result as string;
     });
-  }
-
-  resetProduct(): void {
-    this.newProduct = {
-      category: 0,
-      description: '',
-      mainPhoto: '',
-      price: 0,
-      title: ''
-    }
-    this.imageFile = '';
   }
 
 }

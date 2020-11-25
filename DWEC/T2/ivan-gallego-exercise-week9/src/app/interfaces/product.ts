@@ -1,8 +1,6 @@
-export interface Product {
-    id?: number;
-    title: string;
-    description: string;
-    price: number;
-    mainPhoto: string;
-    category: number;
+import { Category } from './category';
+import { ProductBase } from './product-base';
+
+export interface Product extends ProductBase {
+    category: Category;
 }

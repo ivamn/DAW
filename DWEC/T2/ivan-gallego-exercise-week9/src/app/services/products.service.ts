@@ -1,39 +1,50 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
 import { Product } from '../interfaces/product';
+import { ProductAdd } from '../interfaces/product-add';
+import { catchError, map } from 'rxjs/operators';
+import { ProductResponse, ProductsResponse } from '../interfaces/responses';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getProducts(): Product[] {
-    return [
-      {
-        id: 1,
-        title: 'Rock',
-        description: 'Just a rock',
-        price: 9.8,
-        mainPhoto: 'assets/piedra.jpg',
-        category: 1
-      },
-      {
-        id: 2,
-        title: 'Crown',
-        description: 'Just a crown',
-        price: 59.50,
-        mainPhoto: 'assets/crown.png',
-        category: 2
-      },
-      {
-        id: 3,
-        title: 'Glasses',
-        description: 'Just some glasses',
-        price: 15,
-        mainPhoto: 'assets/glasses.png',
-        category: 3
-      }
-    ];
+  getProducts(): Observable<Product[]> {
+    return this.http.get<ProductsResponse>('products').pipe(
+      map(response => response.products),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(`Error getting products. Status: ${error.status}. Message: ${error.message}`);
+      })
+    );
+  }
+
+  getProduct(id: number): Observable<Product> {
+    return this.http.get<ProductResponse>(`products/${id}`).pipe(
+      map(response => response.product),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(`Error getting the product. Status: ${error.status}. Message: ${error.message}`);
+      })
+    );
+  }
+
+  addProduct(product: ProductAdd): Observable<Product> {
+    return this.http.post<ProductResponse>('products', product).pipe(
+      map(response => response.product),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(`Error adding the product. Status: ${error.status}. Message: ${error.message}`);
+      })
+    );
+  }
+
+  deleteProduct(id: number): Observable<void> {
+    return this.http.delete<void>(`products/${id}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError(`Error deleting the product. Status: ${error.status}. Message: ${error.message}`);
+      })
+    );
   }
 }
