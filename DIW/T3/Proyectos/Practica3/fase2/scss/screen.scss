@@ -1,0 +1,55 @@
+@import "contenido";
+@import "mixin";
+@import "menu";
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    padding-top: 12px;
+    padding-right: 30px;
+    color: #444;
+    font-size: 1.8em;
+    background-color: #eee;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #aaa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.icon-contact {
+    background-position: 0 0;
+    width: 30px;
+    height: 30px;
+}
+
+.icon-menu {
+    background-position: 0 -30px;
+    width: 50px;
+    height: 54px;
+}
+
+.icon-news {
+    background-position: 0 -80px;
+    width: 30px;
+    height: 39px;
+}
+
+.icon-news {
+    background-position: 0 -110px;
+    width: 30px;
+    height: 44px;
+}
+
+footer {
+    color: #eee;
+    background-color: #15a;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px;
+}

@@ -1,0 +1,37 @@
+@keyframes linkhover {
+    0% {
+        background-color: yellow;
+        color: black;
+    }
+
+    100% {
+        background-color: blue;
+        color: white;
+    }
+}
+
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+li {
+    text-align: center;
+    width: 100px;
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+a {
+    color: initial;
+    text-decoration: initial;
+}
+
+li:hover {
+    animation-name: linkhover;
+    animation-duration: 1s;
+}
