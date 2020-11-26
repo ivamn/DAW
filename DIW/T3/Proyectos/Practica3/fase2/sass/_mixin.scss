@@ -1,0 +1,51 @@
+$text: #eee;
+$textHover:lighten($text, 10%); 
+$backgroundColor: #15a;
+$backgroundHover: lighten($backgroundColor, 10%);
+$colorTitulo: darken($backgroundColor, 10%);
+
+@mixin colors {
+    color: $text;
+    background-color: $background   Color;
+}
+
+@mixin colorsHover {
+    color: $textHover;
+    background-color: $backgroundHover;
+}
+
+@mixin boxSizing($valor) {
+    -moz-box-sizing: $valor;
+    -webkit-box-sizing: $valor;
+    box-sizing: $valor;
+}
+
+@mixin transitions($property, $duration, $timing: linear) {
+    transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+}
+
+@mixin animations($name, $duration, $timing: linear) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+    -moz-animation-name: $name;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $timing;
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $timing;
+}
+
+@mixin respond-to($size) {
+    @if $size == medium {
+        @media (max-width: 1024px) {
+            @content;
+        }
+      } @else if ($size == small) {
+        @media (max-width: 800px) {
+            @content;
+        }
+      }
+}

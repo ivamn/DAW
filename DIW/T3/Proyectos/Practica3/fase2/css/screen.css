@@ -1,0 +1,309 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../Borra/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/_contenido.scss */
+#contenido .col-left .login button {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* line 13, ../sass/_contenido.scss */
+#contenido .col-left .login input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #bbb;
+}
+
+/* line 23, ../sass/_contenido.scss */
+i {
+  background: url('../img/../img-sefcd2497b2.png');
+  display: inline-block;
+}
+
+/* line 29, ../sass/_contenido.scss */
+.icon-contact {
+  background-position: 0 0;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* line 29, ../sass/_contenido.scss */
+.icon-menu {
+  background-position: 0 -30px;
+  height: 50px;
+  width: 54px;
+  cursor: pointer;
+}
+
+/* line 29, ../sass/_contenido.scss */
+.icon-news {
+  background-position: 0 -80px;
+  height: 30px;
+  width: 39px;
+  cursor: pointer;
+}
+
+/* line 29, ../sass/_contenido.scss */
+.icon-studies {
+  background-position: 0 -110px;
+  height: 30px;
+  width: 44px;
+  cursor: pointer;
+}
+
+/* line 36, ../sass/_contenido.scss */
+#contenido {
+  padding-top: 30px;
+  padding-right: 10px;
+}
+/* line 40, ../sass/_contenido.scss */
+#contenido .col-left {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30%;
+  float: left;
+  padding: 10px;
+}
+@media (max-width: 800px) {
+  /* line 40, ../sass/_contenido.scss */
+  #contenido .col-left {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 60, ../sass/_contenido.scss */
+#contenido .col-right {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 30px;
+  width: 70%;
+  padding: 10px;
+}
+/* line 66, ../sass/_contenido.scss */
+#contenido .col-right .h1 {
+  color: #0c3e7c;
+  font-size: 1.6em;
+}
+@media (max-width: 800px) {
+  /* line 60, ../sass/_contenido.scss */
+  #contenido .col-right {
+    margin: 0;
+    width: 100%;
+  }
+}
+/* line 77, ../sass/_contenido.scss */
+#contenido .button-action {
+  background-color: #15a;
+  color: white;
+}
+/* line 81, ../sass/_contenido.scss */
+#contenido .button-action:hover {
+  background-color: #64a2f0;
+}
+@media (max-width: 1024px) {
+  /* line 36, ../sass/_contenido.scss */
+  #contenido {
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+}
+
+@keyframes iluminar {
+  from {
+    background-color: #15a;
+    color: #eee;
+  }
+  to {
+    background-color: #166cd8;
+    color: white;
+  }
+}
+/* line 13, ../sass/_menu.scss */
+nav {
+  position: absolute;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* line 18, ../sass/_menu.scss */
+nav ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 24, ../sass/_menu.scss */
+nav > ul {
+  width: 100%;
+  height: 32px;
+  color: #eee;
+  background-color: #15a;
+}
+/* line 31, ../sass/_menu.scss */
+nav li.categoria {
+  float: left;
+}
+/* line 34, ../sass/_menu.scss */
+nav li.categoria > a {
+  transition: padding 0.4s ease-out 0.4s;
+  -webkit-transition: padding 0.4s ease-out 0.4s;
+  -moz-transition: padding 0.4s ease-out 0.4s;
+}
+/* line 41, ../sass/_menu.scss */
+nav li.categoria:hover > a {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+/* line 46, ../sass/_menu.scss */
+nav li.categoria:hover ul.submenu {
+  height: 100px;
+}
+/* line 51, ../sass/_menu.scss */
+nav li.categoria ul.submenu {
+  transition: height 0.5s ease-out;
+  -moz-transition: height 0.5s ease-out;
+  -webkit-transition: height 0.5s ease-out;
+  position: absolute;
+  height: 0px;
+  overflow: hidden;
+}
+/* line 59, ../sass/_menu.scss */
+nav a {
+  color: #eee;
+  background-color: #15a;
+  text-decoration: none;
+  width: 160px;
+  padding-top: 7px;
+  padding-right: 20px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 70, ../sass/_menu.scss */
+nav a:hover {
+  color: white;
+  background-color: #116666;
+  animation-name: iluminar;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  -moz-animation-name: iluminar;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-name: iluminar;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: linear;
+}
+@media (max-width: 1024px) {
+  /* line 13, ../sass/_menu.scss */
+  nav {
+    display: none;
+  }
+}
+
+/* line 12, ../sass/screen.scss */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 17, ../sass/screen.scss */
+header {
+  padding-top: 12px;
+  padding-right: 30px;
+  color: #444;
+  font-size: 1.8em;
+  background-color: #eee;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #aaa;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* line 28, ../sass/screen.scss */
+footer {
+  color: #eee;
+  background-color: #15a;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  padding: 5px;
+}
