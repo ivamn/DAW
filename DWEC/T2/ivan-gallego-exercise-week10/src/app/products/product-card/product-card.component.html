@@ -1,0 +1,15 @@
+<a [routerLink]="['/products', product.id]"><img class="card-img-top" [src]="product.mainPhoto"></a>
+<div class="card-body">
+    <a [routerLink]="['/products', product.id]">
+        <h5 class="card-title">{{product.title}}</h5>
+    </a>
+    <p class="card-text" [innerText]="product.description"></p>
+    <div class="d-flex justify-content-between">
+        <!-- <div class="text-muted align-self-center">{{datePublished}}</div> -->
+        <div><button (click)="deleteProduct()" class="btn btn-danger">Delete</button></div>
+    </div>
+</div>
+<div class="card-footer bg-transparent text-muted row">
+    <div class="col">{{product.category.name}}</div>
+    <div class="col text-right">{{product.price | currency : 'EUR'}}</div>
+</div>

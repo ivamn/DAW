@@ -1,0 +1,20 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Listado de contactos</h1>
+            <div>
+                <ul>
+                    {% for contacto in contactos %}
+                        <li>{{ contacto.nombre }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+
+</html>
