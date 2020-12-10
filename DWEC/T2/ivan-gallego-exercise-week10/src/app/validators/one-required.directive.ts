@@ -9,7 +9,8 @@ export class OneRequiredDirective implements Validator {
 
   constructor() { }
   validate(control: AbstractControl): ValidationErrors | null {
-    if (Object.values(control.value).every(v => v === false)) {
+    console.log(control);
+    if (Object.values(control.value).every(v => !v)) {
       return { 'oneRequired': true };
     }
     return null;

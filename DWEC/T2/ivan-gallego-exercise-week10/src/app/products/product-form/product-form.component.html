@@ -1,5 +1,5 @@
 <form action="#" class="mt-4" id="newProduct" novalidate (ngSubmit)="submitForm()" #productForm="ngForm">
-  <div ngModelGroup="oneRequiredModel" spOneRequired #titleDescriptionGroupModel="ngModelGroup" class="is-valid">
+  <div ngModelGroup="oneRequiredModelGroup" spOneRequired #titleDescriptionGroupModel="ngModelGroup" class="is-valid">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" name="title" id="title" placeholder="Product you are selling"
@@ -7,10 +7,10 @@
           'is-valid': titleModel.touched && titleModel.valid,
           'is-invalid': titleModel.touched && titleModel.invalid  
         }">
-        <div class="invalid-feedback" *ngIf="titleModel.errors?.required">
-          Title is required
-        </div>
-      <div class="invalid-feedback" *ngIf="titleModel.errors?.minLength">
+      <div class="invalid-feedback" *ngIf="titleModel.errors?.required">
+        Title is required
+      </div>
+      <div class="invalid-feedback" *ngIf="titleModel.errors?.minlength">
         The title length must be at least 5 characters
       </div>
     </div>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div class="invalid-feedback" *ngIf="titleDescriptionGroupModel.errors?.oneRequired">
+  <div class="alert alert-danger" *ngIf="titleDescriptionGroupModel.errors?.oneRequired && titleDescriptionGroupModel.touched">
     Tile or description is required
   </div>
   <div class="form-group">
@@ -42,8 +42,8 @@
   </div>
   <div class="form-group">
     <label for="category">Category</label>
-    <select id="category" class="form-control" [(ngModel)]="newProduct.category" name="category" required spPositiveValue
-      #categoryModel="ngModel" [ngClass]="{
+    <select id="category" class="form-control" [(ngModel)]="newProduct.category" name="category" required
+      spPositiveValue #categoryModel="ngModel" [ngClass]="{
         'is-valid': categoryModel.touched && categoryModel.valid,
         'is-invalid': categoryModel.touched && categoryModel.invalid
       }">
@@ -64,9 +64,9 @@
         'is-valid': imageModel.touched && imageModel.valid,
         'is-invalid': imageModel.touched && imageModel.invalid
       }">
-      <div class="invalid-feedback" *ngIf="imageModel.errors?.required">
-        Image is required
-      </div>
+    <div class="invalid-feedback" *ngIf="imageModel.errors?.required">
+      Image is required
+    </div>
   </div>
   <img [src]="newProduct.mainPhoto" alt="" id="imgPreview" class="img-thumbnail">
 

@@ -1,6 +1,8 @@
 @import "compass";
 @import "mixin";
 
+$theme: light;
+
 %button-block {
     @include boxSizing(border-box);
     width: 100%;
@@ -8,6 +10,7 @@
     border-radius: 5px;
     border: 1px solid transparent;
     cursor: pointer;
+
 }
 
 %input-block {
@@ -75,16 +78,21 @@ i {
     }
 
     .button-action {
-        background-color: $backgroundColor;
         color: white;
 
-        &:hover {
-            background-color: lighten($backgroundHover, 20%);
+        @if $theme == dark {
+            background-color: lighten($backgroundColor, 20%);
+        } @else {
+            background-color: darken($backgroundColor, 10%);
         }
     }
 
-    @include respond-to(medium) {
-        padding-top: 10px;
-        padding-right: 20px;
+    &:hover {
+        background-color: lighten($backgroundHover, 20%);
     }
+}
+
+@include respond-to(medium) {
+    padding-top: 10px;
+    padding-right: 20px;
 }

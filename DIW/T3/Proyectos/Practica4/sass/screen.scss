@@ -1,0 +1,44 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@import "contenido";
+@import "mixin";
+@import "menu";
+
+body {
+    padding: 0px;
+    margin: 0px;
+    @if $theme == dark {
+        background-color: #138;
+    } @else {
+        background-color: white;
+        color: #138;
+    }
+}
+
+header {
+    padding-top: 12px;
+    padding-right: 30px;
+    color: #444;
+    font-size: 1.8em;
+    background-color: #eee;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #aaa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer {
+    color: #eee;
+    background-color: #15a;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px;
+}
