@@ -1,0 +1,64 @@
+.sidebar {
+  width: 35%;
+}
+
+.sidebar2 {
+  width: 35%;
+}
+
+header {
+  background: pink;
+}
+
+.author-rosa {
+  background: url(author-rosa.jpg);
+}
+
+.author-lucia {
+  background: url(author-lucia.jpg);
+}
+
+.author-pablo {
+  background: url(author-pablo.jpg);
+}
+
+.author-jose {
+  background: url(author-jose.jpg);
+}
+
+.item {
+  position: absolute;
+  right: 0;
+}
+.item.item-1 {
+  top: 30px;
+}
+.item.item-2 {
+  top: 60px;
+}
+.item.item-3 {
+  top: 90px;
+}
+
+.item {
+  position: absolute;
+  right: 0;
+}
+.item.item-1 {
+  top: 30px;
+}
+.item.item-2 {
+  top: 60px;
+}
+.item.item-3 {
+  top: 90px;
+}
+
+.btn-a {
+  color: #000;
+  border-radius: 4px;
+}
+
+.btn-a {
+  color: #000;
+}

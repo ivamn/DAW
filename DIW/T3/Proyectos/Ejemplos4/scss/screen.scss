@@ -1,0 +1,94 @@
+// Funciones
+@function fluidize() {
+    @return 35%;
+}
+
+.sidebar {
+    width: fluidize();
+}
+
+@function fluidize2($target, $context) {
+    @return ($target/$context) * 100%;
+}
+
+.sidebar2 {
+    width: fluidize2(350px, 1000px);
+}
+
+// IF
+
+$theme: pink;
+
+header {
+    @if $theme == dark {
+        background: #000;
+    }
+    @else if $theme == pink {
+        background: pink;
+    }
+    @else {
+        background: #FFF;
+    }
+}
+
+// Each
+
+$autores: rosa lucia pablo jose;
+@each $autor in $autores {
+    .author-#{$autor} {
+        background: url(author-#{$autor}.jpg);
+    }
+}
+
+// For
+
+.item {
+    position: absolute;
+    right: 0;
+    @for $i from 1 through 3 {
+        &.item-#{$i} {
+            top: $i * 30px;
+        }
+    }
+}
+
+// While
+
+$i: 1;
+.item {
+    position: absolute;
+    right: 0;
+    @while $i < 4 {
+        &.item-#{$i} {
+            top: $i * 30px;
+        }
+        $i: $i + 1;
+    }
+}
+
+// Funciones mixin extends
+
+@mixin button($color,$rounded: true) {
+    color: $color;
+    @if $rounded == true {
+        border-radius: 4px;
+    }
+}
+
+.btn-a {
+    @include button(#000);
+}
+
+.btn-a {
+    @include button(#000, 4px);
+}
+
+// Depuración
+
+@mixin border-radius($radius) {
+    @warn "The `border-radius()` mixin will be deprecated in version 2.0";
+
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
