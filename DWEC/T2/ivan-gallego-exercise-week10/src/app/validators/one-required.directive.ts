@@ -11,7 +11,7 @@ export class OneRequiredDirective implements Validator {
   validate(control: AbstractControl): ValidationErrors | null {
     console.log(control);
     if (Object.values(control.value).every(v => !v)) {
-      return { 'oneRequired': true };
+      return { oneRequired: true };
     }
     return null;
   }
