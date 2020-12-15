@@ -24,6 +24,10 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/nuevo', (req, res) => {
+    res.render('contactos_nuevo');
+});
+
 // Servicio de listado por id
 router.get('/:id', (req, res) => {
     Contacto.findById(req.params.id).then(resultado => {
@@ -47,21 +51,15 @@ router.get('/:id', (req, res) => {
 
 // Servicio para insertar contactos
 router.post('/', (req, res) => {
-
     let nuevoContacto = new Contacto({
         nombre: req.body.nombre,
         telefono: req.body.telefono,
         edad: req.body.edad
     });
     nuevoContacto.save().then(resultado => {
-        res.status(200)
-            .send({ ok: true, resultado: resultado });
+        res.redirect(req.baseUrl);
     }).catch(error => {
-        res.status(400)
-            .send({
-                ok: false,
-                error: "Error añadiendo contacto"
-            });
+        res.status(400).send({ ok: false, error: "No se ha podido añadir el contracto" });
     });
 });
 
@@ -92,20 +90,10 @@ router.put('/:id', (req, res) => {
 
 // Servicio para borrar contactos
 router.delete('/:id', (req, res) => {
-
     Contacto.findByIdAndRemove(req.params.id).then(resultado => {
-        if (resultado)
-            res.status(200)
-                .send({ ok: true, resultado: resultado });
-        else
-            res.status(400)
-                .send({ ok: false, error: "Contacto no encontrado" });
+        res.redirect(req.baseUrl);
     }).catch(error => {
-        res.status(400)
-            .send({
-                ok: false,
-                error: "Error eliminando contacto"
-            });
+        res.status(400).send({ ok: false, error: "No se ha podido borrar el contacto." });
     });
 });
 

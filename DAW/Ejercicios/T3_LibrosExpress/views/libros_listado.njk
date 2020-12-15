@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Libros
+        </title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/estilos.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Listado de libros</h1>
+            </div>
+            <div class="row">
+                <ul>
+                    {% for libro in libros %}
+                        {%if loop.index %2 == 0 %}
+                        <li class="par">
+                        {% else %}
+                        <li class="impar">
+                        {%endif%}
+                            {{ libro.titulo }}
+                            <a href="/libros/{{libro.id}}" class="btn btn-success">Ver ficha</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

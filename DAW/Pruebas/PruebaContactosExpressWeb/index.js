@@ -8,6 +8,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+const methodOverride = require('method-override');
 
 // Enrutadores
 const mascotas = require(__dirname + '/routes/mascotas');
@@ -32,6 +33,16 @@ app.set('view engine', 'njk');
 // Enrutadores para cada grupo de rutas
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(methodOverride(function (req, res) {
+    if (req.body && typeof req.body === 'object'
+        && '_method' in req.body) {
+        let method = req.body._method;
+        delete req.body._method;
+        return method;
+    }
+}));
+
 app.use('/mascotas', mascotas);
 app.use('/restaurantes', restaurantes);
 app.use('/contactos', contactos);
