@@ -1,20 +1,23 @@
-<html>
-
-    <head>
-        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    </head>
-
-    <body>
-        <div class="container">
-            <h1>Listado de contactos</h1>
-            <div>
-                <ul>
-                    {% for contacto in contactos %}
-                        <li>{{ contacto.nombre }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </body>
-
-</html>
+{% extends "base.njk" %}
+{% block titulo %}Contactos | Listado{% endblock %}
+{% block contenido %}
+    <h1>Listado de contactos</h1>
+    <ul>
+        {% for contacto in contactos %}
+            <li>
+                <div class="row">
+                    <p class="col-5">{{ contacto.nombre }}</p>
+                    <div class="col-5">
+                        <a class="btn btn-primary" href="/contactos/{{ contacto.id }}">Ficha</a>
+                    </div>
+                    <form class="col-2" action="/contactos/{{ contacto.id }}" method="post">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit" class="btn btn-danger">
+                            Borrar
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
