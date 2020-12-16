@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Super Shop</title>
     <link rel="stylesheet" href="styles.css">
     <!--
     [if lt IE 9]>
@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <img id="logo" src="img/logo.jpg" style="width: 100px; height: 100px;" alt="Imagen cabecera">
+        <img id="logo" src="img/logo.png" style="width: 100px; height: 100px;" alt="Imagen cabecera">
         <h1 id="nombre-empresa">Super shop</h1>
         <div id="buscador">
             <form id="search-form">
@@ -29,18 +29,36 @@
     </header>
 
     <nav>
-        <ul>
-            <div class="submenu-wrap">
-                <li>
-                    <a href="#">Artículos por tipo</a>
-                </li>
-                <div class="submenu">
-                    <a href="#">Artículos por xd</a>
-                    <a href="#">Artículos por xd</a>
-                    <a href="#">Artículos por xd</a>
+        <div class="menu-item">
+            <a href="#">Artículos por tipo</a>
+            <div class="submenu">
+                <div class="menu-item-2">
+                    <a href="#">Zapatos</a>
+                    <div class="submenu-2">
+                        <a href="#">Zapatos señora</a>
+                        <a href="#">Zapatos caballero</a>
+                        <a href="#">Zapatos niño y niña</a>
+                    </div>
+                </div>
+                <div class="menu-item-2">
+                    <a href="#">Bolsos</a>
+                </div>
+                <div class="menu-item-2">
+                    <a href="#">Ropa</a>
+                    <div class="submenu-2">
+                        <a href="#">Ropa señora</a>
+                        <a href="#">Ropa caballero</a>
+                        <a href="#">Ropa niño y niña</a>
+                    </div>
                 </div>
             </div>
-        </ul>
+        </div>
+        <div class="menu-item">
+            <a href="#">Artículos en ofertas por foto</a>
+        </div>
+        <div class="menu-item">
+            <a href="#">Hacer un pedido</a>
+        </div>
     </nav>
 
     <div class="main-content">
