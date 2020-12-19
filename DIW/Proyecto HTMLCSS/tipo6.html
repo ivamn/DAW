@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png">
+    <title>Super Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--
+    [if lt IE 9]>
+        <script
+            src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+    <![endif]
+    -->
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img id="logo" src="img/logo.png" style="width: 100px; height: 100px;" alt="Imagen cabecera">
+        </a>
+        <h1 id="nombre-empresa">Super shop</h1>
+        <div id="buscador">
+            <form id="search-form">
+                <label class="text-input-label" for="inputBuscador">Buscar: </label>
+                <input class="text-input" type="text" placeholder="Introduce tu búsqueda">
+                <input class="text-input-sumbit" type="submit" value="Buscar">
+            </form>
+        </div>
+    </header>
+
+    <nav>
+        <div class="menu-item">
+            <a href="#">Artículos por tipo</a>
+            <div class="submenu">
+                <div class="menu-item-2">
+                    <a href="#">Zapatos</a>
+                    <div class="submenu-2">
+                        <a href="tipo4.1.1.html">Zapatos señora</a>
+                        <a href="tipo4.1.2.html">Zapatos caballero</a>
+                        <a href="tipo4.1.3.html">Zapatos niño y niña</a>
+                    </div>
+                </div>
+                <div class="menu-item-2">
+                    <a href="tipo4.2.html">Bolsos</a>
+                </div>
+                <div class="menu-item-2">
+                    <a href="#">Ropa</a>
+                    <div class="submenu-2">
+                        <a href="tipo4.3.1.html">Ropa señora</a>
+                        <a href="tipo4.3.2.html">Ropa caballero</a>
+                        <a href="tipo4.3.3.html">Ropa niño y niña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="tipo5.html">Artículos en ofertas por foto</a>
+        </div>
+        <div class="menu-item">
+            <a href="tipo6.html">Hacer un pedido</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <aside class="imagen-animation">
+            <img class="imagen-pedido" src="img/shop.ico">
+        </aside>
+
+        <main>
+            <article class="form-article">
+                <div class="formulario">
+                    <form>
+                        <label for="cuenta">Nº Cuenta</label>
+                        <input type="text" placeholder="00048974456123" id="cuenta" name="cuenta">
+                        <label for="verificacion">Verificación</label>
+                        <input type="number" placeholder="ES89" id="verificacion" name="verificacion">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" placeholder="Iván" id="nombre" name="nombre">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" placeholder="Gallego Torres" id="apellidos" name="apellidos">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="yo@gmail.com" id="email" name="email">
+                        <label for="address">Dirección postal</label>
+                        <input type="text" placeholder="Calle de las luces 40, 03018" id="address" name="address">
+                        <label for="recogida">Recogida</label>
+                        <select name="recogida" id="recogida">
+                            <option>Seleccionar...</option>
+                            <option>En tienda</option>
+                            <option>A domicilio</option>
+                        </select>
+                        <input type="submit" id="submit" name="submit" value="Realizar pedido">
+                    </form>
+                </div>
+                <div class="carrito">
+                    <div class="product">
+                        <img src="img/bolso2.jpg">
+                        <div class="details">
+                            <strong>Bolso de cuero</strong>
+                            <span>29,99€</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="product">
+                        <img src="img/zapato2.jpg">
+                        <div class="details">
+                            <strong>Zapatos deportivos</strong>
+                            <span>45,01</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <span>Precio:</span>
+                    <span>61,98€</span>
+                    <span>IVA:</span>
+                    <span>13,02€</span>
+                    <hr>
+                    <span>Total:</span>
+                    <span>75,00€</span>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div>
+            <p>Sitio web realizado por Iván.</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+        <a href="contacto.html">Contacto</a>
+        <address>diwdaw.iessanvicente.com 2018</address>
+    </footer>
+</body>
+
+</html>
