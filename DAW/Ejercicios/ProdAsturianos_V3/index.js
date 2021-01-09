@@ -28,8 +28,8 @@ nunjucks.configure('views', {
 
 app.set('view engine', 'njk');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(methodOverride(function (req, res) {
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
         let method = req.body._method;

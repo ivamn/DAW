@@ -3,7 +3,7 @@
 {% block titulo %}Administración | Formulario{% endblock %}
 
 {% block contenido %}
-    <form action="/admin/productos" method="post" enctype="multipart/form-data">
+    <form action="/admin/productos/{{ producto.id if producto else '' }}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="{{ producto.nombre if producto else '' }}"/>
@@ -25,12 +25,12 @@
     </form>
 
     {% if producto %}
-    <form action="/admin/comentarios/{{producto.id}}" method="post" class="mt-4">
-        <div class="form-group">
-            <label for="comentario">Comentario</label>
-            <textarea class="form-control" name="comentario" id="comentario" placeholder="Comentario"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Añadir comentario</button>
-    </form>
+        <form action="/admin/comentarios/{{producto.id}}" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="comentario">Comentario</label>
+                <textarea class="form-control" name="comentario" id="comentario" placeholder="Comentario"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Añadir comentario</button>
+        </form>
     {% endif %}
 {% endblock %}

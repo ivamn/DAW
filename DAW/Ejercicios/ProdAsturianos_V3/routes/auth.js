@@ -3,6 +3,7 @@
 */
 
 const express = require("express");
+const bcrypt = require('bcrypt');
 
 const Usuario = require(__dirname + "/../models/usuario.js");
 
@@ -12,18 +13,22 @@ router.get("/login", (req, res) => {
     res.render('auth_login');
 });
 
-router.post('/login', (req, res) => {
-    Usuario.find({ login: req.body.login, password: req.body.password }).then(resultado => {
-        if (resultado && resultado.length) {
-            req.session.usuario = resultado[0];
-            res.redirect('/admin');
+router.post('/login', async (req, res) => {
+    try {
+        const resultado = await Usuario.findOne({ login: req.body.login });
+        if (resultado) {
+            const passwordOk = bcrypt.compare(req.body.password, resultado.password);
+            if (passwordOk) {
+                req.session.usuario = resultado;
+                res.redirect('/admin');
+            }
         } else {
             res.render('auth_login',
                 { error: "Usuario o contraseña incorrectos" });
         }
-    }).catch(error => {
+    } catch (error) {
         res.render('auth_login');
-    });
+    }
 });
 
 router.get('/logout', (req, res) => {
