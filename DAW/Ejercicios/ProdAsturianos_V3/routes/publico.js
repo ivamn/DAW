@@ -18,7 +18,7 @@ router.get("/buscar", (req, res) => {
         if (resultado && resultado.length) {
             res.render('publico_index', { productos: resultado });
         } else {
-            res.render('publico_error', { error: 'No se encontraron productos' });
+            res.render('publico_index', { error: 'No se encontraron resultados' });
         }
     }).catch(error => {
         res.render('publico_error')

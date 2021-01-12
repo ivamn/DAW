@@ -90,7 +90,6 @@ router.put("/productos/:id", auth, upload.single('imagen'), (req, res) => {
 });
 
 router.post("/comentarios/:idProducto", auth, (req, res) => {
-    console.log(req.body);
     let nuevoComentario = new Comentario({
         nombredelusuario: req.session.usuario.login,
         comentario: req.body.comentario
