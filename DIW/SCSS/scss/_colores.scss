@@ -1,0 +1,27 @@
+@use "sass:map";
+
+$theme: light;
+
+$colores: ("chetwode_blue": #6c7ae0,
+    "nobel": #b2b2b2,
+    "mine_shaft": #222,
+    "white": white,
+    "white_30": rgba(255, 255, 255, 0.3),
+    "gray": gray,
+    "endeavour": #0056b3,
+    "moody_blue_80": rgba(103, 117, 214, 0.8),
+    "dorado": #555,
+    "dove_gray": #666666,
+    "gray_brown": #888,
+    "mercury": #e6e6e6,
+    "boulder": #797979,
+    "martini": #999,
+    "silver_10": rgba(204, 204, 204, 0.1));
+
+@if ($theme==light) {
+
+    @each $nombre,
+    $color in $colores {
+        $colores: map.set($colores, $nombre, scale-color($color, $lightness: +40%));
+    }
+}
