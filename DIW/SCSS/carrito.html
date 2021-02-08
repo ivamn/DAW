@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icons/favicon.png">
+    <title>Seishop</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="fonts/fontawesome-5.15.2/css/fontawesome.css" rel="stylesheet">
+    <link href="fonts/fontawesome-5.15.2/css/brands.css" rel="stylesheet">
+    <link href="fonts/fontawesome-5.15.2/css/solid.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!--
+    [if lt IE 9]>
+        <script
+            src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+    <![endif]
+    -->
+</head>
+
+<body>
+    <header>
+        <div id="informacion-header">
+            <div class="contenedor">
+                <span>Envío gratis en pedidos mayores a 100€</span>
+                <a>Ayuda</a>
+                <a>Cuenta</a>
+                <a>ES</a>
+                <a>EUR</a>
+            </div>
+        </div>
+        <nav>
+            <div class="contenedor" id="nav-contenedor">
+                <a id="logo-contenedor">
+                    <img src="images/icons/logo-01.png" alt="logo" />
+                </a>
+                <ul id="items">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="producto.html">Producto recomendado</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <ul id="icons">
+                    <li>
+                        <a href="#modal"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-heart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor margin-top">
+        <div class="migajas">
+            <a href="index.html">
+                Inicio
+                <i class="fas fa-angle-right"></i>
+            </a>
+
+            <span>
+                Carrito
+            </span>
+        </div>
+        <section class="contenedor">
+            <div id="carrito">
+                <div id="productos-carrito">
+                    <div>
+                        <table id="tabla-productos">
+                            <thead>
+                                <tr>
+                                    <th>PRODUCTO</th>
+                                    <th></th>
+                                    <th>PRECIO</th>
+                                    <th>CANTIDAD</th>
+                                    <th>TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="images/item-cart-04.jpg">
+                                    </td>
+                                    <td>
+                                        Fresh Strawberries
+                                    </td>
+                                    <td>$ 36.00</td>
+                                    <td>
+                                        <input type="number" value="1">
+                                    </td>
+                                    <td>$ 36.00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/item-cart-05.jpg">
+                                    </td>
+                                    <td>
+                                        Chaqueta ligera
+                                    </td>
+                                    <td>$ 36.00</td>
+                                    <td>
+                                        <input type="number" value="1">
+                                    </td>
+                                    <td>$ 36.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="resumen-carrito">
+                    <div>
+                        <h4>TOTAL</h4>
+                        <div>
+                            <span>Subtotal: </span>
+                            <span>$72.00</span>
+                        </div>
+                        <div>
+                            <span>Envíos: </span>
+                            <span>No hay metodos actualmente de envío por la pandemia</span>
+                        </div>
+                        <div>
+                            <span>Total: </span>
+                            <span>$72.00</span>
+                        </div>
+                        <button id="hacer-pedido">
+                            Realizar pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <div class="footer-wrapper">
+                <div>
+                    <h4>
+                        Categorias
+                    </h4>
+
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Mujer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Hombre
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Zapatos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Relojes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-wrapper">
+                <div>
+                    <h4>
+                        Ayuda
+                    </h4>
+
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Localizar pedido
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Devoluciones
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Envíos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Preguntas frecuentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-wrapper">
+                <div>
+                    <h4>
+                        Contáctanos
+                    </h4>
+
+                    <p>
+                        Puedes contactar con nosotros a través de nuestras redes sociales o a través de nuestro email.
+                        seishop@gmail.com
+                    </p>
+                    <div class="icons">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-wrapper">
+                <div>
+                    <h4>
+                        Boletín
+                    </h4>
+
+                    <form>
+                        <div>
+                            <input type="text" name="email" placeholder="correo@gmail.com">
+                        </div>
+
+                        <div>
+                            <button>
+                                Subscribirse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div id="copy">
+                Copyright ©2021 Todos los derechos reservados | Esta página ha sido hecha por Iván Daniel Gallego Torres
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</html>

@@ -1,0 +1,26 @@
+@mixin adaptar($propiedad, $valor) {
+    -moz-#{$propiedad}: $valor;
+    -o-#{$propiedad}: $valor;
+    -webkit-#{$propiedad}: $valor;
+    #{$propiedad}: $valor;
+}
+
+@mixin transform($propiedad) {
+    @include adaptar(transform, $propiedad);
+}
+
+@mixin transform-origin($valor) {
+    @include adaptar(transform-origin, $valor);
+}
+
+@mixin transition($propiedad, $tiempo: 0.4) {
+    @include adaptar(transition, $propiedad $tiempo);
+}
+
+@mixin redondear-border($valor) {
+    @include adaptar(border-radius, $valor);
+}
+
+@mixin box-sizing($bs) {
+    @include adaptar(box-sizing, $bs);
+}
