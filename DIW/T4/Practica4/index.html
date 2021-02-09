@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi centro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inserta aquí el CSS de bootstrap -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./stylesheets/custom.css">
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- inserta aquí el div container-fluid para que ocupe toda la página-->
+    <div id="contenido" class="container-fluid">
+        <div>
+            <!-- Inserta el menú, debes tener en cuenta que el menú deberá ocupar todo el ancho de la pantalla siempre, el color que usaremos será 
+            el de la clase bg-primary -->
+            <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+                <a class="navbar-brand text-white" href="#">Mi instituto</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="categoria nav-item">
+                            <a class="nav-link text-white" href="#">Nuestro centro</a>
+                        </li>
+                        <li class="categoria nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown"
+                                id="enseñanzas" role="button" aria-haspopup="true" aria-expanded="false">
+                                Enseñanzas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="enseñanzas">
+                                <a class="dropdown-item" href="#">Administración y gestión</a>
+                                <a class="dropdown-item" href="#">Informática y comunicaciones</a>
+                            </div>
+                        </li>
+                        <li class="categoria nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="alumnado"
+                                role="button" aria-haspopup="true" aria-expanded="false">
+                                Alumnado
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="alumnado">
+                                <a class="dropdown-item" href="#">Calendario escolar</a>
+                                <a class="dropdown-item" href="#">Servicios</a>
+                                <a class="dropdown-item" href="#">Documentos</a>
+                            </div>
+                        </li>
+                        <li class="categoria nav-item">
+                            <a class="nav-link text-white" href="#">Profesorado</a>
+                        </li>
+                        <li class="categoria nav-item">
+                            <a class="nav-link text-white" href="#">Moodle</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Inserta otra fila aquí, y dale un padding de 20px -->
+        <div class="row p-4">
+            <!-- El login será de tamaño 3 mientras que la resolución no sea xs que pasará a ocupar toda la pantalla -->
+            <div class="col-12 col-sm-3">
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="usuario" placeholder="Usuario" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+            <!-- El contenido será de tamaño 9 mientras que la resolución no sea xs que pasará a ocupar toda la pantalla -->
+            <div class="col-12 col-sm-9">
+                <!-- Importante, este contenido será realizado en forma collapse/accordion toggle item, donde por defecto se verá al principio sólo 
+                la información de novedades, pero si pinchamos sobre cualquier item (novedades, estudios ofertados o contacto se desplegará
+                y nos mostrará su contenido o lo ocultará-->
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h1><i class="icon icon-news"></i> Novedades</h1>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+                                    adipisci velit..."
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper mauris nisl, ac
+                                    euismod erat
+                                    dictum
+                                    vel. Nunc lobortis, lectus vitae pulvinar pellentesque, eros sapien posuere lacus,
+                                    et eleifend
+                                    risus
+                                    nisi vel arcu. Sed porttitor eros lorem, ac pulvinar turpis scelerisque at. Praesent
+                                    finibus
+                                    nulla
+                                    sit
+                                    amet tortor varius, non elementum purus viverra. Suspendisse quis ipsum orci.
+                                    Praesent gravida
+                                    turpis
+                                    felis, eu blandit magna egestas nec. Duis vulputate ornare nisi eu ultricies.
+                                    Aliquam blandit
+                                    luctus
+                                    enim eget pharetra. Sed eleifend, tellus sed auctor condimentum, justo urna mollis
+                                    enim, ut
+                                    consectetur
+                                    tortor orci et leo. In vitae magna in velit dapibus sollicitudin. Nam vitae dui
+                                    convallis,
+                                    tempor
+                                    lacus
+                                    et, placerat nibh. Vivamus vehicula, nunc lacinia venenatis tempor, purus magna
+                                    euismod diam, a
+                                    volutpat
+                                    lacus ligula nec ante. Cras eget ultrices urna. Nullam at massa rhoncus, malesuada
+                                    massa eu,
+                                    vulputate
+                                    quam. Ut vel rutrum justo. Donec quis lorem quam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h1><i class="icon icon-studies"></i> Estudios ofertados</h1>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+                                    adipisci velit..."
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper mauris nisl, ac
+                                    euismod erat
+                                    dictum
+                                    vel. Nunc lobortis, lectus vitae pulvinar pellentesque, eros sapien posuere lacus,
+                                    et eleifend
+                                    risus
+                                    nisi vel arcu. Sed porttitor eros lorem, ac pulvinar turpis scelerisque at. Praesent
+                                    finibus
+                                    nulla
+                                    sit
+                                    amet tortor varius, non elementum purus viverra. Suspendisse quis ipsum orci.
+                                    Praesent gravida
+                                    turpis
+                                    felis, eu blandit magna egestas nec. Duis vulputate ornare nisi eu ultricies.
+                                    Aliquam blandit
+                                    luctus
+                                    enim eget pharetra. Sed eleifend, tellus sed auctor condimentum, justo urna mollis
+                                    enim, ut
+                                    consectetur
+                                    tortor orci et leo. In vitae magna in velit dapibus sollicitudin. Nam vitae dui
+                                    convallis,
+                                    tempor
+                                    lacus
+                                    et, placerat nibh. Vivamus vehicula, nunc lacinia venenatis tempor, purus magna
+                                    euismod diam, a
+                                    volutpat
+                                    lacus ligula nec ante. Cras eget ultrices urna. Nullam at massa rhoncus, malesuada
+                                    massa eu,
+                                    vulputate
+                                    quam. Ut vel rutrum justo. Donec quis lorem quam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h1><i class="icon icon-contact"></i> Contactar</h1>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+                                    adipisci velit..."
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper mauris nisl, ac
+                                    euismod erat
+                                    dictum
+                                    vel. Nunc lobortis, lectus vitae pulvinar pellentesque, eros sapien posuere lacus,
+                                    et eleifend
+                                    risus
+                                    nisi vel arcu. Sed porttitor eros lorem, ac pulvinar turpis scelerisque at. Praesent
+                                    finibus
+                                    nulla
+                                    sit
+                                    amet tortor varius, non elementum purus viverra. Suspendisse quis ipsum orci.
+                                    Praesent gravida
+                                    turpis
+                                    felis, eu blandit magna egestas nec. Duis vulputate ornare nisi eu ultricies.
+                                    Aliquam blandit
+                                    luctus
+                                    enim eget pharetra. Sed eleifend, tellus sed auctor condimentum, justo urna mollis
+                                    enim, ut
+                                    consectetur
+                                    tortor orci et leo. In vitae magna in velit dapibus sollicitudin. Nam vitae dui
+                                    convallis,
+                                    tempor
+                                    lacus
+                                    et, placerat nibh. Vivamus vehicula, nunc lacinia venenatis tempor, purus magna
+                                    euismod diam, a
+                                    volutpat
+                                    lacus ligula nec ante. Cras eget ultrices urna. Nullam at massa rhoncus, malesuada
+                                    massa eu,
+                                    vulputate
+                                    quam. Ut vel rutrum justo. Donec quis lorem quam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer w-100 bg-primary text-white">Curso Cefire - Diseño de interfaces web: Bootstrap, Sass y
+        compass</footer>
+
+    <!-- Inserta aquí los JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
