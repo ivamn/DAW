@@ -1,0 +1,6 @@
+%btn-pequeño {
+    display: flex;
+    align-self: center;
+    @include redondear-border(5px);
+    margin: 0 auto;
+}

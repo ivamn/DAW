@@ -1,0 +1,360 @@
+@use "sass:map";
+@import 'mixin';
+@import 'placeholders';
+@import 'colores';
+@import 'fuentes';
+@import 'animaciones';
+@import 'bg';
+@import 'header';
+@import 'index_categorias';
+@import 'footer';
+@import 'carrito';
+@import 'detalles';
+@import 'formulario_contacto';
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none !important;
+		color: obtener-color("chetwode_blue") !important;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.contenedor {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+@for $i from 1 through 3 {
+	$url: url('../images/banner-0#{$i}.jpg');
+
+	.bg#{$i} {
+		background-image: $url;
+	}
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 0.3s;
+}
+
+#encabezado {
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: $font_7, $font_8;
+	font-size: 15px;
+	color: obtener-color("dove_gray");
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+	padding-bottom: 10px;
+}
+
+#contenido-encabezado {
+	padding: 0;
+	@include box-sizing(border-box);
+	font-weight: 500;
+	margin: 0;
+	color: obtener-colores("mine_shaft");
+	font-family: $font_4;
+	font-size: 36px;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+#filtros {
+	display: flex;
+}
+
+#buscadores {
+	flex: none;
+	display: flex;
+
+	div {
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		@include box-sizing(border-box);
+		margin-top: 4px;
+		margin-bottom: 4px;
+		margin-right: 8px;
+		cursor: pointer;
+		@include transition(all);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: obtener-color("gray_brown");
+		font-family: $font_0;
+		font-size: 15px;
+		line-height: 1.2;
+		min-width: 94px;
+		height: 40px;
+		border: 1px solid obtener-color("mercury");
+		@include redondear-border(2px);
+
+		&:hover {
+			font-weight: 400;
+			margin: 0;
+			padding: 0;
+			@include box-sizing(border-box);
+			margin-top: 4px;
+			margin-bottom: 4px;
+			margin-right: 8px;
+			cursor: pointer;
+			@include transition(all);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: $font_0;
+			font-size: 15px;
+			line-height: 1.2;
+			min-width: 94px;
+			height: 40px;
+			border: 1px solid obtener-color("mercury");
+			@include redondear-border(2px);
+			border-color: obtener-color("chetwode_blue");
+			background-color: obtener-color("chetwode_blue");
+			color: obtener-color("white");
+		}
+
+		span {
+			margin-left: 5px;
+		}
+	}
+}
+
+#tipos {
+	flex: auto;
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: $font_7, $font_8;
+	font-size: 15px;
+	color: obtener-color("dove_gray");
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+	margin-top: 10px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+
+	button {
+		&:first-child {
+			padding: 0;
+			@include box-sizing(border-box);
+			touch-action: manipulation;
+			margin: 0;
+			overflow: visible;
+			text-transform: none;
+			outline: none;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			margin-right: 32px;
+			@include transition(all);
+			font-family: $font_0;
+			font-size: 15px;
+			line-height: 1.2;
+			border-bottom: 1px solid transparent;
+			color: obtener-color("mine_shaft");
+			border-color: obtener-color("boulder");
+		}
+
+		&:not(:first-child) {
+			padding: 0;
+			@include box-sizing(border-box);
+			touch-action: manipulation;
+			margin: 0;
+			overflow: visible;
+			text-transform: none;
+			outline: none;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			margin-right: 32px;
+			@include transition(all);
+			color: obtener-color("gray_brown");
+			font-family: $font_0;
+			font-size: 15px;
+			line-height: 1.2;
+			border-bottom: 1px solid transparent;
+
+			&:hover {
+				border-bottom: 1px solid transparent;
+				color: obtener-color("mine_shaft");
+				border-color: obtener-color("boulder");
+			}
+		}
+	}
+}
+
+#productos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	>div {
+		width: 21%;
+	}
+}
+
+#producto-item {
+	width: 100%;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+
+	a {
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		@include box-sizing(border-box);
+		text-decoration: none;
+		background-color: transparent;
+		touch-action: manipulation;
+		padding-bottom: 6px;
+		@include transition(all);
+		color: obtener-color("martini");
+		font-family: $font_0;
+		font-size: 14px;
+		line-height: 1.466667;
+
+		&:hover {
+			text-decoration: none;
+			color: obtener-color("chetwode_blue");
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+
+
+.margin-top {
+	padding-top: 30px;
+}
+
+.migajas {
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: $font_7, $font_8;
+	font-size: 15px;
+	color: obtener-color("dove_gray");
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+	padding-top: 30px;
+	padding-left: 25px;
+	padding-right: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+
+	a {
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		@include box-sizing(border-box);
+		text-decoration: none;
+		background-color: transparent;
+		touch-action: manipulation;
+		@include transition(all);
+		color: obtener-color("dorado");
+		font-family: $font_0;
+		font-size: 12px;
+		line-height: 1.833333;
+
+		i {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+
+	span {
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		@include box-sizing(border-box);
+		color: obtener-color("martini");
+		font-family: $font_0;
+		font-size: 12px;
+		line-height: 1.833333;
+	}
+}
+
+
+
+#contacto-imagen {
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: $font_7, $font_8;
+	font-size: 15px;
+	color: obtener-color("dove_gray");
+	margin: 0;
+	@include box-sizing(border-box);
+	display: block;
+	padding-top: 92px;
+	padding-bottom: 92px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: $url_10;
+
+	h2 {
+		padding: 0;
+		@include box-sizing(border-box);
+		font-weight: 500;
+		margin: 0;
+		text-align: center;
+		color: obtener-color("white");
+		font-family: $font_4;
+		font-size: 50px;
+		line-height: 1.1;
+	}
+}
+
+#logo-contenedor img {
+	animation: swing 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+
+	&:hover {
+		animation: vibrate 1s infinite both;
+	}
+}
+
+.dropdown-item:hover {
+	color: obtener-color("chetwode_blue") !important;
+}
+
+.dropdown a {
+	font-family: $font_6;
+	font-size: 14px;
+	padding: 5px;
+	color: obtener-color("mine_shaft");
+	@include transition(all);
+	text-decoration: none;
+
+	&:hover {
+		color: obtener-color("mine_shaft");
+		text-decoration: none;
+		font-family: $font_6;
+	}
+}

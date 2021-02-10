@@ -1,0 +1,67 @@
+#categorias {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: space-around;
+
+	.block {
+		width: 30%;
+		border: 1px solid obtener-color("gray");
+		@include redondear-border(2px);
+		background-size: 100%;
+		height: 200px;
+
+		img {
+			width: 100%;
+		}
+
+		&:hover #wrapper {
+			color: obtener-color("endeavour");
+			text-decoration: none;
+			background-color: obtener-color("moody_blue_80");
+		}
+
+		#wrapper div {
+			position: relative;
+			top: 20px;
+			left: 20px;
+			display: flex;
+			flex-direction: column;
+
+			span {
+				&:first-child {
+					font-weight: 400;
+					margin: 0;
+					padding: 0;
+					@include box-sizing(border-box);
+					padding-bottom: 8px;
+					@include transition(all);
+					color: obtener-color("mine_shaft");
+					font-family: $font_4;
+					font-size: 28px;
+					line-height: 1.1;
+				}
+
+				&:not(:first-child) {
+					font-weight: 400;
+					margin: 0;
+					padding: 0;
+					@include box-sizing(border-box);
+					@include transition(all);
+					color: obtener-color("dorado");
+					font-family: $font_0;
+					font-size: 14px;
+					line-height: 1.7;
+				}
+			}
+		}
+	}
+}
+
+@for $i from 1 through 3 {
+	$url: url('../images/banner-0#{$i}.jpg');
+
+	.bg#{$i} {
+		background-image: $url;
+	}
+}

@@ -1,0 +1,39 @@
+@keyframes vibrate {
+    0% {
+        @include transform(translate(0));
+    }
+
+    20% {
+        @include transform(translate(-2px, 2px));
+    }
+
+    40% {
+        @include transform(translate(-2px, -2px));
+    }
+
+    60% {
+        @include transform(translate(2px, 2px));
+    }
+
+    80% {
+        @include transform(translate(2px, -2px));
+    }
+
+    100% {
+        @include transform(translate(0));
+    }
+}
+
+@keyframes swing {
+    0% {
+        @include transform(rotateX(-100deg));
+        @include transform-origin(top);
+        opacity: 0;
+    }
+
+    100% {
+        @include transform(rotateX(0deg));
+        @include transform-origin(top);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,119 @@
+#informacion-header {
+    font-family: $font_1;
+    font-size: 12px;
+    line-height: 1.8;
+    color: obtener-color("nobel");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: obtener-color("mine_shaft");
+
+    div {
+        color: obtener-color("white");
+        display: flex;
+
+        :first-child {
+            flex: auto;
+        }
+
+        :nth-child(2) {
+            flex: none;
+            border-left: 1px solid obtener-color("white")_30;
+        }
+
+        * {
+            padding: 10px 20px;
+        }
+
+        :not(:first-child) {
+            flex: none;
+            border-right: 1px solid obtener-color("white")_30;
+        }
+
+        a:hover {
+            color: obtener-color("chetwode_blue");
+            cursor: pointer;
+        }
+    }
+}
+
+nav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 0 !important;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        height: 65%;
+        margin-right: 55px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            border-style: none;
+        }
+    }
+
+    #icons {
+        margin: 0 10px;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+
+        li {
+            margin: 0 10px;
+
+            a {
+                text-decoration: none;
+                color: obtener-color("mine_shaft");
+
+                &:hover {
+                    text-decoration: none;
+                    color: obtener-color("mine_shaft");
+                }
+            }
+        }
+    }
+
+    #items {
+        font-family: $font_6;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        li {
+            margin: 0 10px;
+
+            a {
+                font-family: $font_6;
+                font-size: 14px;
+                padding: 5px;
+                color: obtener-color("mine_shaft");
+                @include transition(all);
+                text-decoration: none;
+            }
+
+            &:hover .dropdown>a {
+                color: obtener-color("chetwode_blue");
+            }
+        }
+    }
+}
+
+#nav-contenedor {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+header {
+	border-bottom: 1px solid obtener-color("gray");
+}
